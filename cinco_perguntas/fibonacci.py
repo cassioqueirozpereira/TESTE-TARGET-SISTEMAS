@@ -1,20 +1,24 @@
-def fibonacci(n):
+def fibonacci(posicao_maxima):
     # gera a sequência de Fibonacci até o valor escolhido pelo usuário.
-    num = [0, 1]
-    while len(num) < n:
+    print(posicao_maxima)
+    if posicao_maxima == 0:
+        num = []
+    elif posicao_maxima == 1:
+        num = [0]
+    else:
+        num = [0, 1]
+    while len(num) < posicao_maxima:
         num2 = num[-1] + num[-2]
         num.append(num2)
     return num
-posicao_maxima = int(input("\nDigite até que posição do número de fibonacci deseja verificar: "))
-def pertence_fibonacci(num3):
+def pertence_fibonacci(numero):
     # Verifica se um número pertence à sequência de Fibonacci
     num = fibonacci(posicao_maxima)  # Você pode aumentar esse valor para mais termos
-    print(num)
-    return num3 in num
+    return numero in num
 # adicionei o método do_while ao programa para o usuário poder testar o
 sim = 1
-
 while sim == 1:
+    posicao_maxima = int(input("\nDigite até que posição do número de fibonacci deseja verificar: "))
     # Solicita um número ao usuário
     numero = int(input("\nDigite o número que deseja verificar: "))
 
